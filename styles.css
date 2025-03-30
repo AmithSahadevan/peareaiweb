@@ -551,9 +551,9 @@ main {
         text-align: center;
         width: 100%;
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.5rem;
     }
 
     .logo.scrolled {
@@ -585,13 +585,20 @@ main {
         transform: scale(1.1);
     }
 
+    /* About Section Gradient */
     .about-gradient {
-        top: -45%;
-        left: -25%;
-        transform: rotate(180deg) scale(0.8);
+        display: block;
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        top: -20%;
+        left: -10%;
+        transform: rotate(180deg) scale(1.2);
+        z-index: -1;
+        opacity: 0.8;
     }
 
-    .gradient img {
+    .about-gradient img {
         width: 100%;
         height: 100%;
         object-fit: cover;

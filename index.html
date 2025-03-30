@@ -114,15 +114,15 @@
             const header = document.querySelector('header');
             const logo = document.querySelector('.logo');
             const navLinks = document.querySelector('.nav-links');
-            const scrollThreshold = 50;
+            const scrollThreshold = isMobile ? 30 : 50; // Lower threshold for mobile
             const scrollRatio = Math.min(window.scrollY / scrollThreshold, 1);
             
             if (isMobile) {
-                // Mobile behavior
-                if (window.scrollY > 100) {
-                    logo.classList.add('fade-out');
+                // Mobile behavior - faster fade
+                if (window.scrollY > 30) {
+                    logo.style.opacity = Math.max(0, 1 - (window.scrollY - 30) / 20);
                 } else {
-                    logo.classList.remove('fade-out');
+                    logo.style.opacity = 1;
                 }
             } else {
                 // Desktop behavior
