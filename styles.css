@@ -547,12 +547,12 @@ main {
     .logo {
         font-size: 2rem;
         padding: 0.8rem 1.2rem;
-        margin: 0 auto;
-        text-align: center;
-        width: 100%;
+        margin: 0;
+        text-align: left;
+        width: auto;
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 1rem;
+        transform: none;
         top: 1.5rem;
     }
 
@@ -703,6 +703,23 @@ main {
 
     .info-item {
         text-align: center;
+    }
+
+    /* Return to Top Button */
+    .return-to-top {
+        right: auto;
+        left: 1rem;
+        width: fit-content !important; /* Force width to match content */
+        max-width: 150px;
+        padding: 0.8rem 1.2rem;
+        border-radius: 25px;
+        display: inline-block;
+    }
+
+    .return-text {
+        text-align: center;
+        display: inline-block;
+        width: auto;
     }
 }
 
