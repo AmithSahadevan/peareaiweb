@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
     <script>
         /*!
          * Particleground
@@ -23,20 +24,8 @@
             // Show the loading screen
             document.querySelector('.loading-screen').style.display = 'flex';
             
-            // Get the current hostname and port
-            const currentHost = window.location.hostname;
-            const isLocal = currentHost === 'localhost' || currentHost === '127.0.0.1';
-            
-            // Use different URLs based on where the site is being accessed from
-            let streamlitUrl;
-            if (isLocal) {
-                streamlitUrl = 'http://localhost:8501';  // Local access
-            } else if (currentHost.includes('ngrok.io')) {
-                // If accessing through ngrok, use the same ngrok URL but port 8501
-                streamlitUrl = window.location.protocol + '//' + currentHost + ':8501';
-            } else {
-                streamlitUrl = 'http://192.168.1.6:8501';  // Network access
-            }
+            // Get the URL from config
+            const streamlitUrl = config.streamlitUrl;
             
             console.log('Redirecting to:', streamlitUrl);
             
